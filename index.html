@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+    </style>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script_1.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <h1>Portfolio</h1>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+        <nav class="nav">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#qualification">Study</a>
+            <a href="#myskills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="home-section" id="home" data-aos="fade-up">
+            <div class="profile-img">
+                <img class="profile-pic" src="profile_pic.png" alt="profile">
+            </div>
+            <div class="home-content">
+                <h2>Hi, I'm Gaddam Viveka Vardhan</h2>
+                <h3 class="developer">Frontend Developer</h3>
+                <p class="info">Enthusiastic and detail-oriented Junior Frontend Developer eager to kickstart a career
+                    in web development. Recently completed third year in Computer Science and a passion for creating
+                    user-friendly interfaces. Proficient in HTML, CSS, and JavaScript, with a commitment to continuous
+                    learning and staying updated on industry best practices.</p>
+                <div class="social-links">
+                    <a href="https://github.com/vivekvardhan30" class="icon"><i class='bx bxl-github' id="bc"></i></a>
+                    <a href="https://x.com/vivek_vardhan30" class="icon"><i class='bx bxl-twitter' id="bc"></i></a>
+                    <a href="https://www.instagram.com/vick_y9425?igsh=MXZwZnhxeGo3MTlnaQ==" class="icon"><i
+                            class='bx bxl-instagram' id="bc"></i></a>
+                    <a href="http://www.linkedin.com/in/gaddam-viveka-vardhan-5821792a7"><i class='bx bxl-linkedin'
+                            id="bc"></i></a>
+                </div>
+                <a href="Gaddam_Viveka_Vardhan_Resume.pdf" class="btn1" download>Download CV</a>
+            </div>
+
+            <!-- Arrow button outside content -->
+            <button class="down-arrow" id="toggleArrow" onclick="toggleScroll()">⬇️</button>
+        </section>
+
+        <section class="about-section" id="about" data-aos="fade-right">
+            <div class="about-container" data-aos="fade-up">
+                <img class="about-img" src="IMG-20240612-WA0107.jpg" alt="photo" data-aos="zoom-in">
+                <div class="about-content" data-aos="fade-left">
+                    <h2 class="about-heading">About Me</h2>
+                    <p class="role"><b>Frontend Developer</b></p>
+                    <p>Hello! I'm G Viveka Vardhan, a passionate with a strong background in various technologies.</p>
+                    <p class="info1">
+                        I am currently studying Computer Science Engineering at SR University. My academic achievements,
+                        combined with my passion for technology, drive me to explore new horizons and make a positive
+                        impact.
+                        I participate in hackathons, open-source projects, and tech meetups, where I collaborate with
+                        like-minded individuals and learn from diverse perspectives.
+                        If you are looking for a motivated and dedicated Front-end Developer, I am available for work
+                        opportunities and excited to contribute to projects that allow me to expand my experience and
+                        knowledge.
+                    </p>
+                    <button class="btn2" id="readMoreBtn" onclick="toggleReadMore()">Read More</button>
+                </div>
+            </div>
+        </section>
+        <section class="qualification" id="qualification" data-aos="fade-left">
+            <div class="education-section">
+                <h2><span style="color: aqua;">🎓</span> Education</h2>
+                <ul class="timeline">
+                    <li class="timeline-item">
+                        <div class="timeline-content left">
+                            <h3>🎒SSC</h3>
+                            <p>Thushara High School</p>
+                            <p>2019-2020</p>
+                            <a href="#" onclick="showPopup('Thushara High School','95%, Warangal, Telangana')">View
+                                More</a>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-content right">
+                            <h3>🧮 Class 12th</h3>
+                            <p>SR Junior College</p>
+                            <p>2020-2022</p>
+                            <a href="#"
+                                onclick="showPopup('SR Junior College', 'MPC , 96%,  Hanamkonda, Telangana')">View
+                                More</a>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-content left">
+                            <h3>💻 College</h3>
+                            <p>SR University</p>
+                            <p>2022-2026</p>
+                            <a href="#"
+                                onclick="showPopup('Btech Computer Science', '93%, SR University, Hanamkonda')">View
+                                More</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="overlay" id="overlay"></div>
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                    <h3 id="popup-title"></h3>
+                    <p id="popup-details"></p>
+                    <button class="close-btn" onclick="closePopup()">Close</button>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="skills-section" id="myskills">
+            <h3 class="my-skill">My Skills</h3>
+            <div class="skills-container">
+                <div class="skill">
+                    <h5>Programming Languages</h5>
+                    <p>C Language</p>
+                    <p>C++ Language</p>
+                    <p>Basic Python</p>
+                    <p>Java OOPs</p>
+                </div>
+                <div class="skill">
+                    <h5>Web Development</h5>
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                    <p>SQL</p>
+                </div>
+                <div class="skill">
+                    <h5>Course Work</h5>
+                    <p>Object Oriented Programming (OOP)</p>
+                    <p>Database Management System (DBMS)</p>
+                    <p>Operating System (OS)</p>
+                    <p>Computer Networks</p>
+                </div>
+                <div class="skill">
+                    <h5>Tools</h5>
+                    <div class="tools">
+                        <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git">
+                        <img src="https://visualstudio.microsoft.com/wp-content/uploads/2019/06/BrandVisualStudioWin2019-3.svg"
+                            alt="Visual Studio">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                            alt="GitHub">
+                        <img src="https://runcode-app-public.s3.amazonaws.com/images/online-jupyter-notebook.original.png"
+                            alt="jupyter notebook" style="color: white; background-color: white;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/1200px-Google_Colaboratory_SVG_Logo.svg.png"
+                            alt=" ggogle colab">
+                    </div>
+                </div>
+            </div>
+            <div class="skills-sec">
+                <h2>Professional Skills</h2>
+                <div class="skills-box">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-1">
+                                <div class="fill-1"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-1"></div>
+                            </div>
+                            <div class="inside-circle"> 90% </div>
+                        </div>
+                        <p>Creativity</p>
+                    </div>
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-2">
+                                <div class="fill-2"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-2"></div>
+                            </div>
+                            <div class="inside-circle"> 80% </div>
+                        </div>
+                        <p>Communication</p>
+                    </div>
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-3">
+                                <div class="fill-3"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-3"></div>
+                            </div>
+                            <div class="inside-circle"> 90% </div>
+                        </div>
+                        <p>Problem Solving</p>
+                    </div>
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-4">
+                                <div class="fill-4"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-4"></div>
+                            </div>
+                            <div class="inside-circle"> 95% </div>
+                        </div>
+                        <p>Teamwork</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="skills-section" id="myskills" data-aos="zoom-in">
+            <h3 class="my-skill">My Skills</h3>
+
+            <!-- Technical Skills -->
+            <div class="skills-container">
+                <div class="skill" data-aos-delay="100">
+                    <h5><i class="fas fa-code"></i> Programming Languages</h5>
+                    <ul>
+                        <li>C Language</li>
+                        <li>C++ Language</li>
+                        <li>Basic Python</li>
+                        <li>Java OOPs</li>
+                    </ul>
+                </div>
+                <div class="skill" data-aos-delay="200">
+                    <h5><i class="fas fa-laptop-code"></i> Web Development</h5>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill" data-aos-delay="300">
+                    <h5><i class="fas fa-book-reader"></i> Course Work</h5>
+                    <ul>
+                        <li>OOP</li>
+                        <li>DBMS</li>
+                        <li>Operating System</li>
+                        <li>Computer Networks</li>
+                    </ul>
+                </div>
+                <div class="skill" data-aos-delay="400">
+                    <h5><i class="fas fa-tools"></i> Tools</h5>
+                    <div class="tools">
+                        <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git">
+                        <img src="https://visualstudio.microsoft.com/wp-content/uploads/2019/06/BrandVisualStudioWin2019-3.svg"
+                            alt="VS">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                            alt="GitHub">
+                        <img src="https://runcode-app-public.s3.amazonaws.com/images/online-jupyter-notebook.original.png"
+                            alt="Jupyter">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/1200px-Google_Colaboratory_SVG_Logo.svg.png"
+                            alt="Colab">
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-sec" id="myskills">
+                <h2 class="section-title">Professional Skills</h2>
+                <div class="skills-box" data-aos="flip-left">
+                    <div class="skill-circle">
+                        <div class="circle">
+                            <div class="inner">90%</div>
+                        </div>
+                        <p>Creativity</p>
+                    </div>
+                    <div class="skill-circle">
+                        <div class="circle">
+                            <div class="inner">80%</div>
+                        </div>
+                        <p>Communication</p>
+                    </div>
+                    <div class="skill-circle">
+                        <div class="circle">
+                            <div class="inner">90%</div>
+                        </div>
+                        <p>Problem Solving</p>
+                    </div>
+                    <div class="skill-circle">
+                        <div class="circle">
+                            <div class="inner">95%</div>
+                        </div>
+                        <p>Teamwork</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="projects-section" id="projects" data-aos="fade-up">
+            <h3>Projects</h3>
+            <div class="projects-container">
+                <div class="project-arrows">
+                    <div id="prevProject" class="arrow left">&#10094;</div>
+                    <div id="nextProject" class="arrow right">&#10095;</div>
+                </div>
+                <div class="project">
+                    <h4>Mortgage Calculator</h4>
+                    <div class="video">
+                        <video src="Screen Recording 2024-07-14 172800.mp4" autoplay loop muted
+                            class="screen-record"></video>
+                    </div>
+                    <p class="desc">This mortgage calculator estimates your monthly repayments and total repayment
+                        amount. Input your mortgage amount, term, interest rate, and select either repayment or
+                        interest-only mortgage type. Instantly see your monthly payments and total repayment over the
+                        term, helping you understand and plan your mortgage commitments effectively.</p>
+                    <div class="click">
+                        <a href="https://github.com/vivekvardhan30/Mortgage-Calculator" class="btn1"> Learn more<i
+                                class='bx bx-right-top-arrow-circle'></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <h4>Video Editing Website</h4>
+                    <div class="video" style="width: 100%; text-align: center; ">
+                        <video src="Screen Recording 2024-12-31 131233.mp4" autoplay loop muted
+                            class="screen-record"></video>
+                    </div>
+                    <p class="desc">I built an video editor website using <span>HTML, CSS, and JavaScript </span>,
+                        connects
+                        users with professional video editors. It features hiring options, <span>secure payment
+                            integration </span>,
+                        advanced filters, and a user-friendly login system. With a contact feature for seamless
+                        communication, this project showcases a functional and visually appealing platform for
+                        <span>video
+                            editing services. </span>
+                    </p>
+                    <div class="click">
+                        <a href="https://github.com/vivekvardhan30/video_editing-" class="btn1"> Learn more<i
+                                class='bx bx-right-top-arrow-circle'></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <h4>Predict Students' Dropout and Academic Success</h4>
+                    <div class="video">
+                        <video src="Screen Recording 2024-07-14 173233.mp4" autoplay loop muted
+                            class="screen-record"></video>
+                    </div>
+                    <p class="desc">I contributed to the <span>"Student Dropout Prediction"</span> project, using <span>
+                            AI and ML </span>to
+                        develop models predicting dropout risks. Analyzing demographics, performance, socio-economic
+                        backgrounds, and behaviors with <span>decision trees, random forests, and neural networks
+                        </span> enabled
+                        early intervention and improved retention.</p>
+                    <div class="click">
+                        <a href="https://github.com/vivekvardhan30/AIML_PROJECT" class="btn1"> Learn more<i
+                                class='bx bx-right-top-arrow-circle'></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <h4>Netflix Clone</h4>
+                    <div class="video">
+                        <video src="Screen Recording 2024-07-23 110810.mp4" autoplay loop muted
+                            class="screen-record"></video>
+                    </div>
+                    <p class="desc">A static, responsive Netflix clone using only HTML and CSS. It replicates the
+                        Netflix UI,
+                        featuring a header, navigation bar, movie thumbnails, and a footer, demonstrating the power of
+                        pure HTML and CSS design.</p>
+                    <div class="click">
+                        <a href="" class="btn1"> Learn more<i class='bx bx-right-top-arrow-circle'></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <section class="contact-section" id="contact" data-aos="fade-up">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h1>Let's Connect<span> 🤝</span></h1>
+                    <p>Got a spark of an idea or a wild project dream? Let’s turn your imagination into something real —
+                        together, we’ll make it happen!</p>
+                    <p class="email-link">📧 <a href="mailto:gaddamvikky84@gmail.com">gaddamvikky84@gmail.com</a></p>
+                </div>
+                <div class="contact-form">
+                    <h2>Send a Message <span>🚀</span></h2>
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Tell me more about your project..." required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="social-media">
+            <a href="https://github.com/vivekvardhan30"><i class='bx bxl-github'></i></a>
+            <a href="https://x.com/vivek_vardhan30"><i class='bx bxl-twitter'></i></a>
+            <a href="https://www.instagram.com/vick_y9425?igsh=MXZwZnhxeGo3MTlnaQ=="><i
+                    class='bx bxl-instagram'></i></a>
+            <a href="http://www.linkedin.com/in/gaddam-viveka-vardhan-5821792a7"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.youtube.com/channel/UCw8IFnLCt2AA_Uqyb6y93eQ"><i class='bx bxl-youtube'></i></a>
+        </div>
+        <p style="margin-top: 5px;">&copy;vivekvardhan30. All rights reserved</p>
+    </footer>
+    <script>
+        function showPopup(title, details) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            document.getElementById('popup-title').textContent = title;
+            document.getElementById('popup-details').textContent = details;
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+            document.body.classList.add('no-scroll');
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            document.body.classList.remove('no-scroll');
+        }
+        function toggleScroll() {
+            const contactSection = document.getElementById('contact');
+            const homeSection = document.getElementById('home');
+            const arrowButton = document.getElementById('toggleArrow');
+
+            if (arrowButton.textContent.trim() === '⬇️') {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                arrowButton.textContent = '⬆️';
+            } else {
+                homeSection.scrollIntoView({ behavior: 'smooth' });
+                arrowButton.textContent = '⬇️';
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".about-section, .skills-section, .projects-section, .contact-section, .footer");
+            const revealOnScroll = () => {
+                sections.forEach((section) => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    if (sectionTop < window.innerHeight - 100) {
+                        section.classList.add("reveal");
+                    }
+                });
+            };
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll();
+        });
+
+    </script>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const projects = document.querySelectorAll(".project");
+            let current = 0;
+
+            function showSlide(index) {
+                projects.forEach((project, i) => {
+                    project.classList.remove("active");
+                    if (i === index) {
+                        project.classList.add("active");
+                    }
+                });
+            }
+
+            function nextSlide() {
+                current = (current + 1) % projects.length;
+                showSlide(current);
+            }
+
+            // Initial show
+            showSlide(current);
+
+            // Auto slide every 5 seconds
+            setInterval(nextSlide, 5000);
+        });
+    </script> -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const projects = document.querySelectorAll(".project");
+            const nextBtn = document.getElementById("nextProject");
+            const prevBtn = document.getElementById("prevProject");
+            let current = 0;
+
+            function showSlide(index) {
+                projects.forEach((project, i) => {
+                    project.classList.remove("active");
+                    if (i === index) {
+                        project.classList.add("active");
+                    }
+                });
+            }
+
+            function nextSlide() {
+                current = (current + 1) % projects.length;
+                showSlide(current);
+            }
+
+            function prevSlide() {
+                current = (current - 1 + projects.length) % projects.length;
+                showSlide(current);
+            }
+
+            // Initial show
+            showSlide(current);
+
+            // Auto-slide every 10 seconds
+            let autoSlide = setInterval(nextSlide, 5000);
+
+            // Manual arrows
+            nextBtn.addEventListener("click", () => {
+                clearInterval(autoSlide);
+                nextSlide();
+            });
+
+            prevBtn.addEventListener("click", () => {
+                clearInterval(autoSlide);
+                prevSlide();
+            });
+        });
+    </script>
+    <script>
+        // Fade-in on scroll
+        document.addEventListener("DOMContentLoaded", () => {
+            const fadeSection = document.querySelector(".projects-section");
+
+            const fadeInObserver = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1,
+                }
+            );
+
+            if (fadeSection) {
+                fadeSection.classList.add("fade-in-section");
+                fadeInObserver.observe(fadeSection);
+            }
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,     // duration of animation (ms)
+            once: false,        // allow animations every time
+            mirror: true,       // animate on scroll up
+            easing: 'ease-in-out',
+            offset: 100         // trigger point from the top
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const bt = document.getElementById("readMoreBtn");
+            const info = document.querySelector(".info1");
+
+            btn.addEventListener("click", () => {
+                info.classList.toggle("expand");
+                bt.textContent = info.classList.contains("expand") ? "Read Less" : "Read More";
+            });
+        });
+    </script>
+
+
+
+    <script>
+        function toggleScroll() {
+            const nextSection = document.querySelector('#about');
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+    
+
+</body>
+
+</html>
