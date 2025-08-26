@@ -22,8 +22,9 @@ It is built with HTML, CSS, JavaScript, and includes sections for **Web Developm
 ---
 
 ## 📸 Preview
-![Portfolio Screenshot](./assets/preview.png)  
-*(Replace with actual screenshot of your site)*
+
+<img width="1908" height="923" alt="image" src="https://github.com/user-attachments/assets/d38a9597-6aed-4d16-9b2b-ff85354fa741" />
+
 
 ---
 
