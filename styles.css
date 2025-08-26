@@ -732,13 +732,41 @@ h1 {
     animation: slideInRight 1s ease-in-out;
 }
 
-.developer {
+/* .developer {
     font-size: 1.8rem;
     color: #00bcd4;
     margin-bottom: 15px;
     font-weight: 600;
     animation: fadeIn 2s ease-in-out;
+} */
+
+.developer {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0d47a1;
+  position: relative;
+  height: 38px; /* fix height so it doesn’t jump */
+  overflow: hidden;
+  padding-bottom: 10px;
 }
+
+.developer .text::after {
+  content: "Web Developer";
+  animation: changeText 12s infinite;
+  position: absolute;
+  padding-bottom: 10px;
+  left: 0;
+}
+
+/* Animation */
+@keyframes changeText {
+  0%   { content: "Web Developer"; }
+  25%  { content: "Data Analyst"; }
+  50%  { content: "Machine Learning Enthusiast"; }
+  75%  { content: "AWS Cloud Developer"; }
+  100% { content: "Web Developer"; }
+}
+
 
 .info {
     font-size: 1.1rem;
