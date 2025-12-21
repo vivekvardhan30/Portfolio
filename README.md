@@ -28,4 +28,3 @@ It is built with HTML, CSS, JavaScript, and includes sections for **Web Developm
 
 ---
 
-## 📂 Folder Structure
